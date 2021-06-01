@@ -9,15 +9,11 @@ with open("./config.json") as f:
 	
 discordToken = config["token"]
 
-ready = False
-
 client = discord.Client()
 
 @client.event
 async def on_ready():
 	print('We have logged in as {0.user}'.format(client))
-	global ready
-	ready = True
 
 async def sendMessage(data,userID):
 	channel = await client.fetch_user(userID)

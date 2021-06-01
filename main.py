@@ -48,6 +48,8 @@ def getMail():
 		return message
 
 def mail():
+	if not remote.client.is_ready():
+		return
 	message = getMail()
 	processMail(message)
 
